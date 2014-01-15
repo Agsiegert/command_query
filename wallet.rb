@@ -1,19 +1,33 @@
 class Wallet
   CURRENCY_TO_CENTS = {
     :penny => 1,
-    :nickel => 5
+    :nickel => 5,
+    :dime => 10,
+    :quarter => 25,
+    :dollar => 100
   }
-  # attr_accessor :wallet
-  def initialize
-    @wallet = 0
 
+  def initialize
+    @coins = []
   end
 
   def cents
-    @wallet
+    @coins.reduce(0) do |sum, coin|
+      sum + CURRENCY_TO_CENTS[coin]
+    end
   end
 
-  def <<(money)
-    @wallet += CURRENCY_TO_CENTS[money]
+  def <<(coin)
+    @coins << coin
   end
+
+  def take(*coins)
+    coins.each do |coin|
+      # if @coins.include? coin
+        i = @coins.index(coin)
+        @coins.delete_at(i) unless i == nil
+      # end
+    end
+  end
+
 end

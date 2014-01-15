@@ -18,7 +18,6 @@ class WalletTest < Minitest::Test
   end
 
   def test_add_nickels
-    skip
     wallet = Wallet.new
     wallet << :nickel
     assert_equal 5, wallet.cents
@@ -27,7 +26,6 @@ class WalletTest < Minitest::Test
   end
 
   def test_add_dimes
-    skip
     wallet = Wallet.new
     wallet << :dime
     assert_equal 10, wallet.cents
@@ -36,7 +34,6 @@ class WalletTest < Minitest::Test
   end
 
   def test_add_quarters
-    skip
     wallet = Wallet.new
     wallet << :quarter
     assert_equal 25, wallet.cents
@@ -45,7 +42,6 @@ class WalletTest < Minitest::Test
   end
 
   def test_add_dollars
-    skip
     wallet = Wallet.new
     wallet << :dollar
     assert_equal 100, wallet.cents
@@ -54,7 +50,6 @@ class WalletTest < Minitest::Test
   end
 
   def test_take_coins_out
-    skip
     wallet = Wallet.new
     wallet << :penny
     wallet << :penny
@@ -68,7 +63,6 @@ class WalletTest < Minitest::Test
   end
 
   def test_take_various_coins_out
-    skip
     wallet = Wallet.new
     wallet << :penny
     wallet << :dime
@@ -80,7 +74,6 @@ class WalletTest < Minitest::Test
   end
 
   def test_ignore_coins_that_are_not_there
-    skip
     wallet = Wallet.new
     wallet << :penny
     wallet.take(:dime)
